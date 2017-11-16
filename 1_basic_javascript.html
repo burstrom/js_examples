@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Example of basic Javascript functions</title>
+	<script type="text/javascript">
+		/* Javascript is fairly easy to get started with. 
+		read more : https://www.w3schools.com/js/js_arithmetic.asp
+		*/
+
+		/* 1.  Output in console: */
+		console.log("This is how you print out data inside the console");
+
+		/* 2. Defining variables: */
+		var Name = "Value"; /* Value can be either Bool, String, Float, Integer or Hex */
+		Name = "New value"; /* Defines the new value of the variable Name */ 
+
+		/* 3. Arithmetic: https://www.w3schools.com/js/js_arithmetic.asp */
+		var X = 12;
+		var Y = 15;
+
+		console.log(("X+Y = ")+(X+Y)); /* Addition */
+		console.log(("X-Y = ")+(X-Y)); /* Subtraction */
+		console.log(("X/Y = ")+(X/Y)); /* Division */
+		console.log(("X*Y = ")+(X*Y)); /* Multiplication */
+		/* note: There are many other functions included in the Math object, 
+		read more : https://www.w3schools.com/js/js_math.asp */
+
+		/* 4. Defining functions : */
+		function FunctionName(Argument_1,Argument_2){
+			console.log(Argument_1);
+			return Argument_2;
+		}
+
+		/* Read data from HTML-Input fields: */
+		function fetchInputData(){
+			var input_text_dom = document.getElementById("input_text");
+			var input_text_value = input_text_dom.value;
+			console.log("input_text  = " + input_text_value);
+
+			var input_number_dom = document.getElementById("input_number");
+			var input_number_value = input_number_dom.value;
+			console.log("input_number  = " + input_number_value);
+
+			var input_checkbox_dom = document.getElementById("input_checkbox");
+			var input_checkbox_value = input_checkbox_dom.checked; 
+			console.log("input_checkbox  = " + input_checkbox_value);
+
+			var select_id_dom = document.getElementById("select_id");
+			var select_id_value = select_id_dom.value;
+			console.log("select_id  = " + select_id_value);
+		}
+	</script>
+</head>
+<body>
+	<!-- onchange sets an event-listener that triggers every time the input is changed, read more on events here: https://www.w3schools.com/tags/ref_eventattributes.asp -->
+	<input onchange="console.log(this.value)" type="text" id="input_text" value="Text value">
+	<input onchange="console.log(this.value)" type="number" id="input_number" value="1337">
+	<input onchange="console.log(this.checked)" type="checkbox" id="input_checkbox" checked>
+	<select onchange="console.log(this.value)" id="select_id" value="0">
+		<option value="0">Zero</option>
+		<option value="10">Ten</option>
+		<option value="20">Twenty</option>
+		<option value="30">Thirty</option>
+	</select>
+</body>
+<footer>
+	<script type="text/javascript">
+		fetchInputData();
+	</script>
+</footer>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Example of basic JQUERY uses</title>
+	<script type='text/javascript' src='js/jquery-3.2.1.min.js'></script>
+	<link rel="stylesheet" href="css/bootstrap-3.3.7.min.css">
+	<script type='text/javascript' src='js/bootstrap-3.3.7.min.js'></script>
+	<script type="text/javascript">
+		/* Bootstrap helps you "prettify" your website without much extra work 
+		read more : http://getbootstrap.com/docs/3.3/
+		*/
+	</script>
+	<style type="text/css">
+		body{
+			padding:25px;
+		}
+		.cols-4{
+			max-width:250px;
+			display:block;
+			margin:10px;
+		}
+	</style>
+</head>
+<body>
+	<input class="form-control cols-4" onchange="console.log($(this).val())" type="text" id="input_text" value="Text value">
+	<input class="form-control cols-4" onchange="console.log($(this).val())" type="number" id="input_number" value="1337">
+	<input class="form-control cols-4" onchange="console.log($(this).is(':checked'))" type="checkbox" id="input_checkbox" checked>
+	<select class="form-control cols-4" onchange="console.log($(this).val())" id="select_id" value="0">
+		<option value="0">Zero</option>
+		<option value="10">Ten</option>
+		<option value="20">Twenty</option>
+		<option value="30">Thirty</option>
+	</select>
+</body>
+<footer>
+	<script type="text/javascript">
+		
+	</script>
+</footer>
+</html>

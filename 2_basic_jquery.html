@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Example of basic JQUERY uses</title>
+	<script type='text/javascript' src='js/jquery-3.2.1.min.js'></script>
+	<script type="text/javascript">
+		/* Jquery simplifies your html-javascript interaction */
+
+		/* Old input example */
+		function fetchInputData_old(){
+			/* Old_example 1 */
+			var input_text_dom = document.getElementById("input_text");
+			var input_text_value = input_text_dom.value;
+			console.log("input_text  = " + input_text_value);
+
+			/* Old_example 2 */
+			var input_number_dom = document.getElementById("input_number");
+			var input_number_value = input_number_dom.value;
+			console.log("input_number  = " + input_number_value);
+
+			/* Old_example 3 */
+			var input_checkbox_dom = document.getElementById("input_checkbox");
+			var input_checkbox_value = input_checkbox_dom.checked; 
+			console.log("input_checkbox  = " + input_checkbox_value);
+
+			/* Old_example 4 */
+			var select_id_dom = document.getElementById("select_id");
+			var select_id_value = select_id_dom.value;
+			console.log("select_id  = " + select_id_value);
+		}
+
+		/* New input example */
+		function fetchInputData_new(){
+			/* New_example 1 */
+			var input_text_value = $("#input_text").val();
+			console.log("input_text  = " + input_text_value);
+
+			/* New_example 2 */
+			var input_number_value = $("#input_number").val();
+			console.log("input_number  = " + input_number_value);
+
+			/* New_example 3 */
+			var input_checkbox_value = $("#input_checkbox").is(":checked"); 
+			console.log("input_checkbox  = " + input_checkbox_value);
+
+			/* New_example 4 */
+			var select_id_value = $("#select_id").val();
+			console.log("select_id  = " + select_id_value);
+		}
+	</script>
+</head>
+<body>
+	<input onchange="console.log($(this).val())" type="text" id="input_text" value="Text value">
+	<input onchange="console.log($(this).val())" type="number" id="input_number" value="1337">
+	<input onchange="console.log($(this).is(':checked'))" type="checkbox" id="input_checkbox" checked>
+	<select onchange="console.log($(this).val())" id="select_id" value="0">
+		<option value="0">Zero</option>
+		<option value="10">Ten</option>
+		<option value="20">Twenty</option>
+		<option value="30">Thirty</option>
+	</select>
+</body>
+<footer>
+	<script type="text/javascript">
+		fetchInputData_new();
+	</script>
+</footer>
+</html>
